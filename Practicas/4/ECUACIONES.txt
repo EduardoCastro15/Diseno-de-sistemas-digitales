@@ -1,0 +1,4 @@
+D1 = AD + AC + \BC\D + BCD
+D2 = \BD + \A\CD + BC\D + A\BC
+D3 = \A\CD + \ABD + B\CD + A\C\D + AB\D + A\BCD
+D4 = \A\B\D + \A\BC + \BC\D + \ABD + AB\D

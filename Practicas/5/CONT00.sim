@@ -1,0 +1,61 @@
+%SIGNAL
+PIN   1 =  CLK 
+PIN  19 =  Q0 
+PIN  20 =  Q1 
+PIN  21 =  Q2 
+PIN  22 =  Q3 
+PIN  23 =  Q4 
+PIN   3 =  RST 
+%END
+
+%FIELD
+%END
+
+%EQUATION
+Q0.d  =>
+    !Q1
+  # !Q3
+  # !Q4
+
+Q0.ar Q1.ar Q2.ar Q3.ar Q4.ar  =>
+    RST
+
+Q1.d  =>
+    Q1 & Q2 & Q3 & Q4
+  # Q0 & !Q1
+
+Q1.ar  =>
+    
+Q2.d  =>
+    !Q3
+  # !Q0 & !Q1
+
+Q2.ar  =>
+    
+Q3.d  =>
+    Q2 & !Q3
+  # !Q2 & Q3 & Q4
+
+Q3.ar  =>
+    
+Q4.d  =>
+    !Q0 & !Q3
+
+Q4.ar  =>
+    
+Q0.oe  =>
+    1 
+
+Q1.oe  =>
+    1 
+
+Q2.oe  =>
+    1 
+
+Q3.oe  =>
+    1 
+
+Q4.oe  =>
+    1 
+
+%END
